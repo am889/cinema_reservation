@@ -1,0 +1,12 @@
+.venv/
+*.alembic
+*.pyc
+__pycache__/
+__pycache__
+instance/
+.pytest_cache/
+.cinemaapp.db
+.alembic/
+alembic/
+alembic.ini
+fastapienv/

@@ -1,0 +1,196 @@
+      {% extends 'Navbar.html' %}
+      {% block content%}
+      <main>
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-label="Slide 1"
+              aria-current="true"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+              class=""
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#myCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+              class=""
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <svg
+                class="bd-placeholder-img"
+                width="100%"
+                height="100%"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <image
+                  xlink:href="images\spiderman.jpg"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="xMidYMid slice"
+                />
+              </svg>
+              <div class="container">
+                <div class="carousel-caption text-start">
+                  <h1>Example headline.</h1>
+                  <p class="opacity-75">
+                    Some representative placeholder content for the first slide of
+                    the carousel.
+                  </p>
+                  <p>
+                    <a class="btn btn-lg btn-primary" href="#">Book Your Seat</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <svg
+                class="bd-placeholder-img"
+                width="100%"
+                height="100%"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <image
+                  xlink:href="images\black-panther-wakanda-forever-movie-poster-8k-wallpaper-uhdpaper.com-297@1@j.jpg"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="xMidYMid slice"
+                />
+              </svg>
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>Another example headline.</h1>
+                  <p>
+                    Some representative placeholder content for the second slide
+                    of the carousel.
+                  </p>
+                  <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <svg
+                class="bd-placeholder-img"
+                width="100%"
+                height="100%"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <image
+                  xlink:href="images\oppenheimer-poster-crop.avif"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="xMidYMid slice"
+                />
+              </svg>
+              <div class="container">
+                <div class="carousel-caption text-end">
+                  <h1>One more for good measure.</h1>
+                  <p>
+                    Some representative placeholder content for the third slide of
+                    this carousel.
+                  </p>
+                  <p>
+                    <a class="btn btn-lg btn-primary" target="_blank" href="https://www.youtube.com/watch?v=bK6ldnjE3Y0">Browse gallery</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+      <br>
+        <div class="container" >
+          <div class="row">
+          <h1 style="text-align: center; margin-top: 20px; color: white;">Currently Showing</h1>
+          </div>
+          <div class="row mt-5">
+            <div class="col-4">
+              <a  href="/movie/TheShawshankRed" >
+                    <img
+                      src="images\poster1-por.webp"
+                      class="img-fluid rounded-start"
+                      alt="oppenheimer-poster-crop"
+                      style="max-height: 600px; "
+
+                    />
+                  </a>
+       
+            </div>
+            <div class="col-4">
+                    <img
+                      src="images\spiderposterpor.jpg"
+                      class="img-fluid rounded-start"
+                      alt="oppenheimer-poster-crop"
+                      style="max-height: 600px;"
+                    />
+         
+            </div>
+            <div class="col-4">
+        
+                    <img
+                      src="images\knivesoutpor1.jpg"
+                      alt="oppenheimer-poster-crop"
+                      style="max-height: 600px; border: solid; border-radius: 5%;"
+
+                    />
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>Design  by Ali Mohamed</footer>
+  
+    <!-- <h1 class="anton-regular">Welcome to Cinema Reservation</h1>
+
+
+    <div class="container">
+        {%for movie in movies%}
+        <div class="movie-card">
+            <a href="/reservation/{{ movie.id }}">
+                <img src={{movie.poster_url}} alt={{movie.movie_title}}></a>
+            <h2 class="movie-title">{{movie.movie_title}}</h2>
+        </div>
+        {%endfor%}
+    </div>
+    <script src="{{ url_for('static',path='/cinema/js/base.js') }}"></script> -->
+
+{% endblock %}
+
+      </body>
+</html>

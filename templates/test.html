@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        #seat-map {
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .screen {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .row {
+            display: flex;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .seat {
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .seat.selected {
+            background-color: yellow;
+        }
+
+        .seat.reserved {
+            background-color: red;
+        }
+
+        .row-label {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cinema Reservation</h1>
+    <div class="screen">SCREEN</div>
+    <div id="seat-map">
+        <!-- Seats will be generated dynamically using JavaScript -->
+    </div>
+    <button id="reserve-btn">Reserve Seats</button>
+    <div id="reservation-message"></div>
+
+    <script>
+        // Array of available seats
+        const seats = [];
+
+        // Generate seats
+        for (let row = 1; row <= 10; row++) {
+            const rowContainer = document.createElement('div');
+            rowContainer.classList.add('row');
+
+            const rowLabel = document.createElement('div');
+            rowLabel.classList.add('row-label');
+            rowLabel.textContent = String.fromCharCode(65 + row - 1);
+            rowContainer.appendChild(rowLabel);
+
+            for (let col = 1; col <= 10; col++) {
+                const seat = document.createElement('div');
+                seat.classList.add('seat');
+                seat.dataset.row = String.fromCharCode(65 + row - 1);
+                seat.dataset.col = col;
+                seat.textContent = col;
+                seat.addEventListener('click', () => {
+                    seat.classList.toggle('selected');
+                });
+                seats.push(seat);
+                rowContainer.appendChild(seat);
+            }
+
+            document.getElementById('seat-map').appendChild(rowContainer);
+        }
+
+        // Reserve button
+        const reserveBtn = document.getElementById('reserve-btn');
+        const reservationMessage = document.getElementById('reservation-message');
+</script>
+</body>
